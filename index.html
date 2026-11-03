@@ -4,61 +4,62 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>Para Alexa ❤️</title>
-<meta name="theme-color" content="#171018">
+<meta name="theme-color" content="#120507">
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#100b10;color:#fff;font-family:Georgia,'Times New Roman',serif}
+html,body{margin:0;padding:0;background:#0d0506;color:#fff;font-family:Georgia,'Times New Roman',serif}
 body{min-height:100vh;overflow-x:hidden}
 
-/* Fondo con degradado suave */
+/* Fondo oscuro con degradado en tonalidades rojas y carmesí */
 .bg{position:fixed;inset:0;background:
-radial-gradient(circle at 20% 10%,rgba(255,142,177,.18),transparent 32%),
-radial-gradient(circle at 85% 80%,rgba(205,123,255,.12),transparent 35%),
-#100b10;z-index:-2}
+radial-gradient(circle at 20% 10%,rgba(180, 20, 40, .22),transparent 35%),
+radial-gradient(circle at 85% 80%,rgba(120, 10, 25, .2),transparent 40%),
+#0d0506;z-index:-2}
 
 /* Animación de corazones flotantes */
-.hearts{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.5}
-.heart{position:absolute;font-size:18px;animation:float 8s linear infinite;opacity:0}
-@keyframes float{0%{transform:translateY(105vh) rotate(0);opacity:0}15%{opacity:.7}90%{opacity:.2}100%{transform:translateY(-10vh) rotate(25deg);opacity:0}}
+.hearts{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.6}
+.heart{position:absolute;font-size:18px;color:#ff3b56;animation:float 8s linear infinite;opacity:0}
+@keyframes float{0%{transform:translateY(105vh) rotate(0);opacity:0}15%{opacity:.8}90%{opacity:.2}100%{transform:translateY(-10vh) rotate(25deg);opacity:0}}
 
 /* Pantalla de Bloqueo */
 .screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{width:min(440px,100%);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);backdrop-filter:blur(18px);border-radius:30px;padding:36px 26px;box-shadow:0 25px 80px rgba(0,0,0,.45)}
+.card{width:min(440px,100%);background:rgba(255, 255, 255, .04);border:1px solid rgba(225, 29, 72, .3);backdrop-filter:blur(18px);border-radius:30px;padding:36px 26px;box-shadow:0 25px 80px rgba(0,0,0,.7), 0 0 30px rgba(180, 20, 40, .15)}
 .lock-icon{font-size:44px;text-align:center;margin-bottom:8px}
-h1{text-align:center;font-size:28px;margin:0 0 12px;font-weight:500;color:#ffb0c8}
-.subtitle{text-align:center;color:#d9cbd2;line-height:1.6;margin:0 auto 25px;max-width:340px;font-size:15px;font-style:italic}
+h1{text-align:center;font-size:28px;margin:0 0 12px;font-weight:500;color:#ff4d6d}
+.subtitle{text-align:center;color:#e2c6cc;line-height:1.6;margin:0 auto 25px;max-width:340px;font-size:15px;font-style:italic}
 
 /* Campos de contraseña */
 .pin{display:flex;justify-content:center;gap:10px;margin:20px 0}
-.pin input{width:52px;height:60px;border-radius:16px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;text-align:center;font-size:26px;outline:none;font-family:inherit}
-.pin input:focus{border-color:#ff9dbb;box-shadow:0 0 0 3px rgba(255,157,187,.15)}
-button.btn-unlock{width:100%;border:0;border-radius:16px;padding:15px 18px;background:linear-gradient(135deg,#ff8ead,#c986df);color:white;font-size:16px;font-weight:bold;cursor:pointer;box-shadow:0 10px 25px rgba(213,121,163,.25);transition:transform 0.2s}
+.pin input{width:52px;height:60px;border-radius:16px;border:1px solid rgba(225, 29, 72, .4);background:rgba(20, 5, 8, .6);color:#fff;text-align:center;font-size:26px;outline:none;font-family:inherit}
+.pin input:focus{border-color:#ff2a4b;box-shadow:0 0 0 3px rgba(255, 42, 75, .25)}
+button.btn-unlock{width:100%;border:0;border-radius:16px;padding:15px 18px;background:linear-gradient(135deg,#b91c1c,#800f2f);color:white;font-size:16px;font-weight:bold;cursor:pointer;box-shadow:0 10px 25px rgba(185, 28, 28, .4);transition:transform 0.2s}
 button.btn-unlock:active{transform:scale(0.98)}
-.error{height:24px;text-align:center;color:#ff9dbb;margin-top:12px;font-size:14px}
+.error{height:24px;text-align:center;color:#ff4d6d;margin-top:12px;font-size:14px}
 
 /* Contenido Principal (Oculto inicialmente) */
 #content{display:none}
 .hero{padding:40px 20px 15px;text-align:center}
-.hero h2{font-size:38px;font-weight:500;margin:0 0 10px;color:#ffb0c8}
-.hero p{color:#d9cbd2;margin:0;font-size:17px;font-style:italic}
+.hero h2{font-size:38px;font-weight:500;margin:0 0 10px;color:#ff4d6d}
+.hero p{color:#e2c6cc;margin:0;font-size:17px;font-style:italic}
 
 /* Galería de Videos y Fotos */
-.gallery-title{text-align:center;margin:30px 0 15px;font-size:22px;color:#e8d1dc;font-weight:400}
+.gallery-title{text-align:center;margin:30px 0 15px;font-size:22px;color:#f87171;font-weight:400}
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;max-width:720px;margin:0 auto 35px;padding:0 16px}
-.gallery video, .gallery img{width:100%;height:300px;object-fit:cover;border-radius:20px;display:block;box-shadow:0 12px 35px rgba(0,0,0,.4);background:#000;border:1px solid rgba(255,255,255,.1)}
+.gallery video, .gallery img{width:100%;height:300px;object-fit:cover;border-radius:20px;display:block;box-shadow:0 12px 35px rgba(0,0,0,.6);background:#000;border:1px solid rgba(225, 29, 72, .25)}
 
 /* Carta */
 .letter{max-width:700px;margin:25px auto 50px;padding:0 20px}
-.paper{background:#fff8f3;color:#35252b;border-radius:26px;padding:35px 28px;box-shadow:0 25px 70px rgba(0,0,0,.35);line-height:1.8;font-size:17px}
-.paper h3{font-size:26px;margin:0 0 20px;color:#9a4d68;font-weight:500;border-bottom:1px solid #ebd3dc;padding-bottom:12px}
+.paper{background:#16090c;color:#f3d5db;border:1px solid rgba(225, 29, 72, .3);border-radius:26px;padding:35px 28px;box-shadow:0 25px 70px rgba(0,0,0,.7);line-height:1.8;font-size:17px}
+.paper h3{font-size:26px;margin:0 0 20px;color:#ff4d6d;font-weight:500;border-bottom:1px solid rgba(225, 29, 72, .3);padding-bottom:12px}
 .paper p{white-space:pre-line;margin:0}
 
 /* Reproductor de música opcional */
 .music{max-width:700px;margin:0 auto 25px;padding:0 20px;text-align:center}
-.music button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;padding:12px 20px;border-radius:20px;cursor:pointer;font-size:15px}
+.music button{background:rgba(185, 28, 28, .15);border:1px solid rgba(225, 29, 72, .4);color:#fff;padding:12px 20px;border-radius:20px;cursor:pointer;font-size:15px;transition:background 0.3s}
+.music button:hover{background:rgba(185, 28, 28, .3)}
 iframe{width:1px;height:1px;position:absolute;left:-10000px;border:0}
 
-.footer{text-align:center;color:#9d8f96;font-size:13px;padding:10px 20px 40px}
+.footer{text-align:center;color:#a87a84;font-size:13px;padding:10px 20px 40px}
 .shake{animation:shake .35s}
 @keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
 
@@ -79,10 +80,9 @@ iframe{width:1px;height:1px;position:absolute;left:-10000px;border:0}
 <!-- PANTALLA DE BLOQUEO -->
 <section class="screen" id="lock">
   <div class="card" id="card">
-    <div class="lock-icon">💌</div>
+    <div class="lock-icon">❤️</div>
     <h1>Para ti, Alexa</h1>
     
-    <!-- Mensaje poético actualizado -->
     <p class="subtitle">
       Cada pequeño corazón de papel que te he dado guarda un pedacito de lo que siento... 
       <br><br>
@@ -151,9 +151,6 @@ Estar contigo es algo mágico de verdad y la paso muy bien. Espero al menos saca
 </main>
 
 <script>
-// -------------------------------------------------------------
-// CONTRASEÑA ACTUALIZADA A 0811
-// -------------------------------------------------------------
 const PASS = "0811";
 
 // Lógica de entradas de PIN
