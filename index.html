@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Para Val ❤️</title>
+<title>Para Alexa ❤️</title>
 <meta name="theme-color" content="#171018">
 <style>
 *{box-sizing:border-box}
@@ -42,10 +42,10 @@ button.btn-unlock:active{transform:scale(0.98)}
 .hero h2{font-size:38px;font-weight:500;margin:0 0 10px;color:#ffb0c8}
 .hero p{color:#d9cbd2;margin:0;font-size:17px;font-style:italic}
 
-/* Galería de Videos */
+/* Galería de Videos y Fotos */
 .gallery-title{text-align:center;margin:30px 0 15px;font-size:22px;color:#e8d1dc;font-weight:400}
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;max-width:720px;margin:0 auto 35px;padding:0 16px}
-.gallery video{width:100%;height:300px;object-fit:cover;border-radius:20px;display:block;box-shadow:0 12px 35px rgba(0,0,0,.4);background:#000;border:1px solid rgba(255,255,255,.1)}
+.gallery video, .gallery img{width:100%;height:300px;object-fit:cover;border-radius:20px;display:block;box-shadow:0 12px 35px rgba(0,0,0,.4);background:#000;border:1px solid rgba(255,255,255,.1)}
 
 /* Carta */
 .letter{max-width:700px;margin:25px auto 50px;padding:0 20px}
@@ -65,7 +65,7 @@ iframe{width:1px;height:1px;position:absolute;left:-10000px;border:0}
 /* Adaptación para pantallas pequeñas */
 @media(max-width:480px){
   .gallery{grid-template-columns:1fr;}
-  .gallery video{height:280px}
+  .gallery video, .gallery img{height:280px}
   .paper{padding:26px 20px;font-size:16px}
   h1{font-size:25px}
 }
@@ -80,13 +80,13 @@ iframe{width:1px;height:1px;position:absolute;left:-10000px;border:0}
 <section class="screen" id="lock">
   <div class="card" id="card">
     <div class="lock-icon">💌</div>
-    <h1>Para ti, Val</h1>
+    <h1>Para ti, Alexa</h1>
     
-    <!-- Mensaje poético con la pista de los corazones de papel -->
+    <!-- Mensaje poético actualizado -->
     <p class="subtitle">
       Cada pequeño corazón de papel que te he dado guarda un pedacito de lo que siento... 
       <br><br>
-      Si los has conservado con cuidado, bajo sus pliegues encontrarás la combinación que abre este secreto.
+      Si los has conservado con cuidado, bajo sus pliegues encontrarás la combinación que abre este secreto. y si quieres saber el orden en el acta de entrega que firmaste la direccion de entrega es la clave secreta.
     </p>
 
     <div class="pin">
@@ -105,30 +105,23 @@ iframe{width:1px;height:1px;position:absolute;left:-10000px;border:0}
 <main id="content">
 
   <div class="hero">
-    <h2>Val ❤️</h2>
+    <h2>Alexa ❤️</h2>
     <p>Esta es mi manera de transmitirte lo mucho que me gusta estar a tu lado.</p>
   </div>
 
-  <!-- GALERÍA DE VIDEOS JUNTOS -->
-  <h3 class="gallery-title">momentos lindos 🎥</h3>
+  <!-- GALERÍA DE 1 VIDEO Y 3 FOTOS -->
+  <h3 class="gallery-title">momentos lindos 🎥📸</h3>
   <div class="gallery">
     <video controls playsinline preload="metadata">
       <source src="video1.mp4" type="video/mp4">
       Tu navegador no soporta el reproductor de video.
     </video>
-    <video controls playsinline preload="metadata">
-      <source src="video2.mp4" type="video/mp4">
-    </video>
-    <video controls playsinline preload="metadata">
-      <source src="video3.mp4" type="video/mp4">
-    </video>
-    <video controls playsinline preload="metadata">
-      <source src="video4.mp4" type="video/mp4">
-    </video>
+    <img src="foto1.jpg" alt="Foto especial 1">
+    <img src="foto2.jpg" alt="Foto especial 2">
+    <img src="foto3.jpg" alt="Foto especial 3">
   </div>
 
-  <!-- MÚSICA DE FONDO (Opcional) -->
-<!-- MÚSICA DE FONDO (SIN ANUNCIOS) -->
+  <!-- MÚSICA DE FONDO -->
   <div class="music">
     <button id="btnMusica" onclick="playSong()">🎵 Reproducir «Si Pudiera» — Manuel Medrano</button>
     <audio id="musicaFondo" loop preload="auto">
@@ -137,11 +130,11 @@ iframe{width:1px;height:1px;position:absolute;left:-10000px;border:0}
     </audio>
   </div>
 
-<!-- CARTA DE "POR QUÉ QUIERO QUE ESTÉS EN MI VIDA" -->
+  <!-- CARTA -->
   <div class="letter">
     <article class="paper">
       <h3>¿Por qué quiero que estés en mi vida?</h3>
-      <p>Una vez me dijiste si solo me parecías linda o en realidad me gustabas y la respuesta es clara... Me gustas Vale.
+      <p>Una vez me dijiste si solo me parecías linda o en realidad me gustabas y la respuesta es clara... Me gustas Alexa.
 
 Esto es solo una pequeña muestra de este sentimiento que tengo por ti, darte los corazones de papel es una forma de transmitirte esto que igual sé que ya lo sabes pero te lo quiero recalcar.
 
@@ -153,15 +146,15 @@ Estar contigo es algo mágico de verdad y la paso muy bien. Espero al menos saca
     </article>
   </div>
 
-  <div class="footer">Hecho con todo mi cariño para Valentina ❤️</div>
+  <div class="footer">Hecho con todo mi cariño para Alexa ❤️</div>
 
 </main>
 
 <script>
 // -------------------------------------------------------------
-// 1. DEFINE AQUÍ LA CONTRASEÑA (Los números de los corazones)
+// CONTRASEÑA ACTUALIZADA A 0811
 // -------------------------------------------------------------
-const PASS = "0711"; // Cambia "1234" por la combinación real de los corazones de papel
+const PASS = "0811";
 
 // Lógica de entradas de PIN
 const inputs = [...document.querySelectorAll('.pin input')];
@@ -183,7 +176,7 @@ function unlock() {
     document.getElementById('lock').style.display = 'none';
     document.getElementById('content').style.display = 'block';
     window.scrollTo(0, 0);
-    playSong(); // Inicia la canción si se activa la función
+    playSong();
   } else {
     document.getElementById('error').textContent = 'Mmm... esa no es la clave de los corazones ❤️';
     const c = document.getElementById('card');
@@ -195,9 +188,7 @@ function unlock() {
   }
 }
 
-// -------------------------------------------------------------
-// 2. ENLACE DE CANCIÓN DE YOUTUBE (Opcional)
-// -------------------------------------------------------------
+// Reproductor de música
 function playSong() {
   const audio = document.getElementById('musicaFondo');
   const btn = document.getElementById('btnMusica');
@@ -221,6 +212,9 @@ for (let i = 0; i < 18; i++) {
   h.style.animationDuration = (6 + Math.random() * 7) + 's'; 
   document.getElementById('hearts').appendChild(h);
 }
+</script>
+</body>
+</html>
 </script>
 </body>
 </html>
